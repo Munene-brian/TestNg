@@ -1,0 +1,21 @@
+button
+{
+    background-color: #eebd68;
+    border: 1px solid #eebd68;
+    
+}
+.btn:hover
+{
+    background-color: #eebd68;
+
+}
+input:focus
+{
+    border: 3px solid #e7970d;
+}
+.smiley
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

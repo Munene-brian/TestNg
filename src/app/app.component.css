@@ -1,0 +1,180 @@
+@import '~font-awesome/css/font-awesome.css';
+.card
+{
+    position: relative;
+    width: 650px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: 0.4s;
+
+
+}
+.card .circle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.card .circle::before
+{
+    content: '';
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2e2c2c;
+    clip-path: circle(130px at center);
+    transition: 0.4s;
+
+}
+.card:hover .circle:before
+{
+    background-color: #9c8c7c;
+    clip-path: circle(500px at center);
+    opacity: .89;
+    box-shadow: 20px 20px 50px rgba(156, 140, 124, 0.5);
+    background: rgba(156, 140, 124, 0.2);
+    backdrop-filter: blur(50px);
+    
+}
+.card img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    pointer-events: none;
+    transition: 0.4s;
+    transform: translate(-50%,-50%);
+}
+.card:hover img
+{
+    left: 80%;
+    height: 500px;
+}
+.card .content
+{
+    position: relative;
+    width: 50%;
+    padding: 10px 20px 20px 40px;
+    visibility: hidden;
+    opacity: 0;
+    left: 20%;
+    transition: .4s;
+}
+.card:hover .content
+{
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.card .content h3
+{
+    color: #fff;
+    text-decoration: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 5px;
+}
+.card .content p
+{
+    color: #fff;
+}
+.card .content a
+{
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background: #eebd68;
+    font-weight: 700;
+    display:inline-block;
+    text-decoration: none;
+}
+.card .content .amount li
+{
+
+    list-style: none;
+    color: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+
+nav ul li
+{
+    list-style: none;
+    display: inline-block;
+}
+
+.amount
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1px;
+    padding: 1px;
+    align-items: center;
+    align-self: center;
+}
+button
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 2px;
+    border: 1px solid #fff;
+
+}
+button:hover{
+    background-color: #eebd68;
+}
+.btn1
+{
+    grid-column-start: 3
+}
+
+@media (max-width:900px)
+{
+    .card
+    {
+        height: fit-content;
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+    }
+    .card:hover
+    {
+        height: 600px;
+    }
+    .card .content
+    {
+        width: 100%;
+        left: 0;
+        padding: 30px;
+    }
+    .card:hover img
+    {
+        top: 70%;
+        left: 50%;
+        height: 300px;
+    }
+}
+@media (max-width:420px)
+{
+    .card .content
+    {
+        padding: 20px;
+    }
+}
